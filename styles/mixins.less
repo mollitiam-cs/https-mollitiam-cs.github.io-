@@ -1,0 +1,279 @@
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+
+  filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr='@{stop}', endColorstr='@{start}',GradientType=0 )";
+  background: linear-gradient(top, @start 1%, @stop 100%);
+}
+/*
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+    background-color: @color;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@start), to(@stop));
+    background-image: -webkit-linear-gradient(top, @start, @stop);
+    background-image:    -moz-linear-gradient(top, @start, @stop);
+    background-image:     -ms-linear-gradient(top, @start, @stop);
+    background-image:      -o-linear-gradient(top, @start, @stop);
+    background-image:         linear-gradient(top, @start, @stop);
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorStr='@{start}', EndColorStr='@{stop}')}";
+}
+*/
+
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, rgb(@start,@start,@start)),
+                               color-stop(1, rgb(@stop,@stop,@stop)));
+  background: -ms-linear-gradient(bottom,
+                                  rgb(@start,@start,@start) 0%,
+                                  rgb(@start,@start,@start) 100%);
+  background: -moz-linear-gradient(center bottom,
+                                   rgb(@start,@start,@start) 0%,
+                                   rgb(@stop,@stop,@stop) 100%);
+}
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+  border-top: solid 1px @top-color;
+  border-left: solid 1px @left-color;
+  border-right: solid 1px @right-color;
+  border-bottom: solid 1px @bottom-color;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  -ms-transition-duration: @duration;
+  transition-duration: @duration;
+}
+
+.transition-delay(@delay: 0.2s) {
+  -moz-transition-delay: @delay;
+  -webkit-transition-delay: @delay;
+  -o-transition-delay: @delay;
+  -ms-transition-delay: @delay;
+  transition-delay: @delay;
+}
+
+.animation-delay(@delay: 0.2s) {
+  -moz-animation-delay: @delay;
+  -webkit-animation-delay: @delay;
+  -o-animation-delay: @delay;
+  -ms-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+.rotation(@deg:5deg){
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+.scale(@ratio:1.5){
+  -webkit-transform:scale(@ratio);
+  -moz-transform:scale(@ratio);
+  transform:scale(@ratio);
+}
+.transition (@prop: all, @time: 1s, @ease: linear) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}
+
+.inner-shadow(@horizontal: 0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.transform-origin(@params: 50% 50% 0){
+	transform-origin: @params;
+	-ms-transform-origin: @params; /* IE 9 */
+	-webkit-transform-origin: @params;
+}
+
+
+// GJ: renamed to prevent accidental use (`.columns` is a mixin provided by the semantic grid system)
+.css-columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+
+.translate(@x: 0, @y: 0) {
+  -moz-transform: translate(@x, @y);
+  -webkit-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+
+.translate3d(@x: 0, @y: 0, @z: 0) {
+	-moz-transform: translate3d(@x, @y, @z);
+	-webkit-transform: translate3d(@x, @y, @z);
+	-o-transform: translate3d(@x, @y, @z);
+	-ms-transform: translate3d(@x, @y, @z);
+	transform: translate3d(@x, @y, @z);
+}
+
+/*
+There is a new tag in CSS3 that you can use to change the way the box model
+calculates width/height, it's called box-sizing.
+
+By setting this property with the value "border-box" it makes which ever
+element you apply it to not stretch when you add a padding or border. If you
+define something with 100px width, and 10px padding, it will still be 100px
+wide.
+
+It does not work for IE7 and lower, however, I believe that Dean Edward's IE7.js
+adds support for it.
+
+@see http://stackoverflow.com/questions/485827/css-100-height-with-padding-margin
+*/
+.box-sizing(@type: border-box){
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	-ms-box-sizing: @type;
+	-o-box-sizing: @type;
+	box-sizing: @type;
+}
+
+
+.no-select{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+///////////////////////////////////////////////////////////
+//
+// centering
+//
+///////////////////////////////////////////////////////////
+
+// using translate to center stuff, see http://css-tricks.com/centering-percentage-widthheight-elements/
+.centered(@left: 50%, @top: 50%){
+	.translate(@left * -1, @top * -1);
+	left: @left;
+	top: @top;
+}
+
+.centered-both{
+	.centered();
+}
+
+.centered-vertical{
+	.centered(0%, 50%);
+}
+
+.centered-horizontal{
+	.centered(50%, 0%);
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
+///////////////////////////////////////////////////////////
+//
+// clear fix
+//
+///////////////////////////////////////////////////////////
+
+.clearfix:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix {display: inline-block;}
+
+/* start commented backslash hack \*/
+~* html .clearfix{height: 1%}
+.clearfix {display:block;}
+/* close commented backslash hack */
