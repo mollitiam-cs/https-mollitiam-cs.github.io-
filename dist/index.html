@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="data:,">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>Mollitiam Consultancy Services</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+		<script>
+			function showMenu(){
+				document.querySelector('html').classList.add('showing-menu');
+			}
+
+			function hideMenu(){
+				document.querySelector('html').classList.remove('showing-menu');
+			}
+
+			window.onload = (event) => {
+				const home = document.querySelectorAll('section.home')[0];
+				const observer = new IntersectionObserver(elements =>{
+					if(!elements[0].isIntersecting){
+						document.querySelector('html').classList.add('scrolled-past-home');
+					}
+					else{
+						document.querySelector('html').classList.remove('scrolled-past-home');
+					}
+				});
+
+				observer.observe(home)
+			}
+		</script>
+
+		<script type="module" crossorigin src="/assets/index.42fe4937.js"></script>
+		<link rel="stylesheet" href="/assets/index.f1433e35.css">
+	</head>
+	<body>
+		<main>
+			<header>
+				<a href="#Home" class="logo"></a>
+				<nav>
+					<ul>
+						<li><a href="mailto:email@email.com">email@email.com</a></li>
+						<li><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
+						<li class="menu">
+							<a onclick="showMenu()">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAYAAACGVs+MAAAAXklEQVRIie2VOQrAMAwEd4O/l9fmgUplyEXAEFkpZiqjxovYQQKoxv3/iLhG2bKz2V6X23QybxtIx7bKN0CAdnint/4BLKCEBDhpOMoX2qIhJfy3BTOOU70FALVI2gGpuBAt04aCAwAAAABJRU5ErkJggg=="/>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<nav class="mobile-menu">
+				<ul>
+					<li>
+						<img class="logo" src="/assets/logo-no-tagline.1a64ffd3.png" />
+						<a class="close" onclick="hideMenu()">X</a>
+						<br />
+						<strong>MENU</strong>
+					</li>
+					<li><a onclick="hideMenu()" href="#About">About</a></li>
+					<li><a onclick="hideMenu()" href="#Resilience">Resilience</a></li>
+					<li><a onclick="hideMenu()" href="#Risk">Risk</a></li>
+					<li><a onclick="hideMenu()" href="#Assurance">Assurance</a></li>
+				</ul>
+
+				<ul class="contact">
+					<li><a href="mailto:email@email.com">email@email.com</a></li>
+					<li><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
+				</ul>
+
+			</nav>
+
+			<!-- /////////////////////////////////////////////////////////////////
+
+			Home
+
+			///////////////////////////////////////////////////////////////// -->
+
+			<a id="Home"></a>
+			<section class="home">
+				<img class="logo" src="/assets/logo-white.6ec41f98.png" />
+				<div class="tag-line">Resilience by design</div>
+				<h1>Welcome to Mollitiam consultancy services</h1>
+
+				<div class="buttons">
+					<a class="button hero" href="#About">About</a>
+					<span class="connector"></span>
+					<a class="button xhero" href="#Resilience">Resilience</a>
+					<span class="connector"></span>
+					<a class="button xhero" href="#Risk">Risk</a>
+					<span class="connector"></span>
+					<a class="button xhero" href="#Assurance">Assurance</a>
+
+					<br />
+					<div class="scroll-info">
+						scroll down to find out more
+						<br />
+						⌄
+					</div>
+				</div>
+			</section>
+
+			<!-- /////////////////////////////////////////////////////////////////
+
+			About
+
+			///////////////////////////////////////////////////////////////// -->
+
+			<a id="About"></a>
+			<section class="about">
+				<h2>About us</h2>
+				<div class="has-3-columns">
+					<div>
+						<h3>Nunc et nulla eu justo mollis tincidunt.</h3>
+
+						<p>Integer nec massa vel nisi dignissim tristique at porta massa. Proin rutrum cursus eros, in scelerisque turpis volutpat in. Pellentesque consectetur, arcu eget feugiat suscipit, magna massa volutpat tellus, at blandit turpis urna non lacus. Nam ac ex eget lorem ornare eleifend vel nec orci. Aenean ullamcorper erat vitae urna hendrerit, id mattis arcu malesuada. Cras malesuada neque urna, vel pretium tellus malesuada nec. Maecenas aliquam ex ut justo convallis, nec ullamcorper nulla tincidunt. Aliquam auctor nisi quis tincidunt rhoncus. Proin fermentum luctus ligula, vel sollicitudin arcu auctor sit amet. Curabitur condimentum purus at purus pellentesque viverra. Maecenas suscipit sapien at nibh lacinia sagittis.</p>
+					</div>
+					<div>
+						<h3>Lorem ipsum dolor sit.</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+
+						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+					</div>
+					<div>
+						<h3>Ut consequat felis et turpis facilisis.</h3>
+
+						<p>Morbi ac dignissim nisl. Ut consequat felis et turpis facilisis, vel malesuada justo bibendum. Fusce non vulputate sapien. Duis dictum augue ac ligula bibendum accumsan. Duis semper sodales tortor, hendrerit finibus eros accumsan sit amet. Sed rutrum pulvinar sapien, eu lacinia magna interdum ac. Phasellus maximus justo non porttitor consequat. Vivamus non justo ligula.</p>
+						<p>Morbi ac dignissim nisl. Ut consequat felis et turpis facilisis, vel malesuada justo bibendum. Fusce non vulputate sapien. Duis dictum augue ac ligula bibendum accumsan. Duis semper sodales tortor, hendrerit finibus eros accumsan sit amet. Sed rutrum pulvinar sapien, eu lacinia magna interdum ac. Phasellus maximus justo non porttitor consequat. Vivamus non justo ligula.</p>
+					</div>
+				</div>
+				<a class="button hero" href="#Resilience">Resilience</a>
+
+				<img src="/assets/business01.5c1ba5c2.jpg" />
+			</section>
+
+			<!-- /////////////////////////////////////////////////////////////////
+
+			Resilience
+
+			///////////////////////////////////////////////////////////////// -->
+
+			<a id="Resilience"></a>
+			<section class="white resilience">
+				<div class="tag-line">Lorem ipsum dolor sit amet</div>
+				<h1>Operational Resilience</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+				<img src="/assets/edinburgh01.60909ada.jpg" />
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+				<a class="button hero" href="#Risk">Risk</a>
+			</section>
+
+
+			<a id="Risk"></a>
+			<section class="blue risk">
+				<div class="tag-line">Lorem ipsum dolor sit amet</div>
+				<h1>Operational Risk</h1>
+				<div class="has-2-columns">
+					<div>
+						<h3>Nunc et nulla eu justo mollis tincidunt.</h3>
+
+						<p>Integer nec massa vel nisi dignissim tristique at porta massa. Proin rutrum cursus eros, in scelerisque turpis volutpat in. Pellentesque consectetur, arcu eget feugiat suscipit, magna massa volutpat tellus, at blandit turpis urna non lacus. Nam ac ex eget lorem ornare eleifend vel nec orci. Aenean ullamcorper erat vitae urna hendrerit, id mattis arcu malesuada. Cras malesuada neque urna, vel pretium tellus malesuada nec. Maecenas aliquam ex ut justo convallis, nec ullamcorper nulla tincidunt. Aliquam auctor nisi quis tincidunt rhoncus. Proin fermentum luctus ligula, vel sollicitudin arcu auctor sit amet. Curabitur condimentum purus at purus pellentesque viverra. Maecenas suscipit sapien at nibh lacinia sagittis.</p>
+					</div>
+					<div>
+						<h3>Lorem ipsum dolor sit.</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+
+						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+					</div>
+				</div>
+				<a class="button hero green" href="#Assurance">Assurance</a>
+
+				<div class="images">
+					<img src="/assets/business02.86cab98d.jpg" />
+					<br />
+					<img src="/assets/business03.28301e04.jpg" />
+					<br />
+					<a class="button hero" href="mailto:email@email.com">Get in touch</a>
+				</div>
+			</section>
+
+			<a id="Assurance"></a>
+			<section class="assurance">
+				<div class="tag-line">Lorem ipsum dolor sit amet</div>
+				<h1>Project Assurance</h1>
+
+				<div class="has-2-columns">
+					<div>
+						<h3>Nunc et nulla eu justo mollis tincidunt.</h3>
+
+						<p>Integer nec massa vel nisi dignissim tristique at porta massa. Proin rutrum cursus eros, in scelerisque turpis volutpat in. Pellentesque consectetur, arcu eget feugiat suscipit, magna massa volutpat tellus, at blandit turpis urna non lacus. Nam ac ex eget lorem ornare eleifend vel nec orci. Aenean ullamcorper erat vitae urna hendrerit, id mattis arcu malesuada. Cras malesuada neque urna, vel pretium tellus malesuada nec. Maecenas aliquam ex ut justo convallis, nec ullamcorper nulla tincidunt. Aliquam auctor nisi quis tincidunt rhoncus. Proin fermentum luctus ligula, vel sollicitudin arcu auctor sit amet. Curabitur condimentum purus at purus pellentesque viverra. Maecenas suscipit sapien at nibh lacinia sagittis.</p>
+					</div>
+					<div>
+						<h3>Lorem ipsum dolor sit.</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+
+						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+					</div>
+				</div>
+			</section>
+
+			<footer>
+				<div class="has-4-columns">
+					<div>
+						<h3>Address</h3>
+						<ul>
+							<li>1 Street name</li>
+							<li>Town</li>
+							<li>City</li>
+							<li>County</li>
+							<li>Country</li>
+							<li><a href="https://maps.google.com/maps?q=BA1 1SS">BA1 1SS</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Contact details</h3>
+						<ul>
+							<li><a href="mailto:email@email.com">email@email.com</a></li>
+							<li><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Site map</h3>
+						<ul>
+							<li><a href="#About">About</a></li>
+							<li><a href="#Resilience">Resilience</a></li>
+							<li><a href="#Risk">Risk</a></li>
+							<li><a href="#Assurance">Assurance</a></li>
+						</ul>
+					</div>
+					<div>
+
+						<h3>Social links</h3>
+						<ul>
+							<li><a href="tbc">LinkedIn</a></li>
+							<li><a href="tbc">Twitter</a></li>
+							<li><a href="tbc">Facebook</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+				<details>
+					<ul>
+						<li>In order of appearance:</li>
+						<li><strong>Tree</strong>: Photo by <a href="https://unsplash.com/@pedrosanz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pedro Sanz</a> on <a href="https://unsplash.com/s/photos/resilience?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+
+						<li><strong>Business01</strong>: Photo by <a href="https://unsplash.com/@medienstuermer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Medienstürmer</a> on <a href="https://unsplash.com/s/photos/business?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+
+						<li><strong>Edinburgh01</strong>: Photo by <a href="https://unsplash.com/@roanlavery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roan Lavery</a> on <a href="https://unsplash.com/s/photos/scotland?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+
+
+						<li><strong>Business02</strong>: Photo by <a href="https://unsplash.com/@johnschno?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Schnobrich</a> on <a href="https://unsplash.com/s/photos/business?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+
+						<li><strong>Business03</strong>: Photo by <a href="https://unsplash.com/@charles_forerunner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Charles Forerunner</a> on <a href="https://unsplash.com/s/photos/business?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+					</ul>
+					<summary>
+						Image credits
+					</summary>
+				</details>
+
+				<div class="copyright">
+					<img src="/assets/logo-no-tagline.1a64ffd3.png" />
+					Built and designed by <strong><a href="mailto:gav_jackson@yahoo.com">Digital-Mojo ltd.</a></strong>
+					<br />
+					<br />
+					&copy; 2022 Mollitiam Consultancy Services ltd.
+				</div>
+
+			</footer>
+		</main>
+		
+	</body>
+</html>
