@@ -7,13 +7,13 @@ Development
 1. Launch the dev server with `npm run dev`
 
 
-
 Deployment
 ----------
 
 1. Build the site locally with `npm run build`
+3. Test the site with `npm start`
 2. Copy the `dist` folder into the `docs` folder
-3. Done - test online at http://www.mollitiam-consultancy-services.co.uk/
+4. Done - test online at http://www.mollitiam-consultancy-services.co.uk/
 
 
 Notes
