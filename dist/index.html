@@ -17,7 +17,7 @@
 				document.querySelector('html').classList.remove('showing-menu');
 			}
 
-			window.onload = (event) => {
+			window.onload = () => {
 				const home = document.querySelectorAll('section.home')[0];
 				const observer = new IntersectionObserver(elements =>{
 					if(!elements[0].isIntersecting){
@@ -33,7 +33,7 @@
 		</script>
 
 		<script type="module" crossorigin src="/assets/index.42fe4937.js"></script>
-		<link rel="stylesheet" href="/assets/index.f1433e35.css">
+		<link rel="stylesheet" href="/assets/index.f7086e86.css">
 	</head>
 	<body>
 		<main>
@@ -41,37 +41,38 @@
 				<a href="#Home" class="logo"></a>
 				<nav>
 					<ul>
-						<li><a href="mailto:email@email.com">email@email.com</a></li>
-						<li><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
+						<li class="hide-threshold3"><a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li>
+						<li class="hide-threshold3"><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
 						<li class="menu">
 							<a onclick="showMenu()">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAYAAACGVs+MAAAAXklEQVRIie2VOQrAMAwEd4O/l9fmgUplyEXAEFkpZiqjxovYQQKoxv3/iLhG2bKz2V6X23QybxtIx7bKN0CAdnint/4BLKCEBDhpOMoX2qIhJfy3BTOOU70FALVI2gGpuBAt04aCAwAAAABJRU5ErkJggg=="/>
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAYAAACGVs+MAAAAXklEQVRIie2VOQrAMAwEd4O/l9fmgUplyEXAEFkpZiqjxovYQQKoxv3/iLhG2bKz2V6X23QybxtIx7bKN0CAdnint/4BLKCEBDhpOMoX2qIhJfy3BTOOU70FALVI2gGpuBAt04aCAwAAAABJRU5ErkJggg==" alt="menu icon"/>
 							</a>
 						</li>
 					</ul>
 				</nav>
 			</header>
 
-			<nav class="mobile-menu">
+			<div class="mobile-menu">
 				<ul>
 					<li>
-						<img class="logo" src="/assets/logo-no-tagline.1a64ffd3.png" />
+						<img class="logo" src="/assets/logo-no-tagline.1a64ffd3.png" alt="logo no tagline"/>
 						<a class="close" onclick="hideMenu()">X</a>
 						<br />
 						<strong>MENU</strong>
 					</li>
-					<li><a onclick="hideMenu()" href="#About">About</a></li>
-					<li><a onclick="hideMenu()" href="#Resilience">Resilience</a></li>
-					<li><a onclick="hideMenu()" href="#Risk">Risk</a></li>
-					<li><a onclick="hideMenu()" href="#Assurance">Assurance</a></li>
+					<li><a class="menu-link" onclick="hideMenu()" href="#Home">Home</a></li>
+					<li><a class="menu-link" onclick="hideMenu()" href="#About">About</a></li>
+					<li><a class="menu-link" onclick="hideMenu()" href="#Resilience">Resilience</a></li>
+					<li><a class="menu-link" onclick="hideMenu()" href="#Risk">Risk</a></li>
+					<li><a class="menu-link" onclick="hideMenu()" href="#Assurance">Assurance</a></li>
 				</ul>
 
 				<ul class="contact">
-					<li><a href="mailto:email@email.com">email@email.com</a></li>
+					<li><a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li>
 					<li><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
 				</ul>
 
-			</nav>
+			</div>
 
 			<!-- /////////////////////////////////////////////////////////////////
 
@@ -81,25 +82,27 @@
 
 			<a id="Home"></a>
 			<section class="home">
-				<img class="logo" src="/assets/logo-white.6ec41f98.png" />
-				<div class="tag-line">Resilience by design</div>
-				<h1>Welcome to Mollitiam consultancy services</h1>
+				<div>
+					<div class="tag-line">Resilience by design</div>
+					<h1>Welcome to Mollitiam Consultancy Services</h1>
+				</div>
+
+				<img class="logo" src="/assets/logo-white.6ec41f98.png" alt="logo white" />
 
 				<div class="buttons">
 					<a class="button hero" href="#About">About</a>
 					<span class="connector"></span>
-					<a class="button xhero" href="#Resilience">Resilience</a>
+					<a class="button" href="#Resilience">Resilience</a>
 					<span class="connector"></span>
-					<a class="button xhero" href="#Risk">Risk</a>
+					<a class="button" href="#Risk">Risk</a>
 					<span class="connector"></span>
-					<a class="button xhero" href="#Assurance">Assurance</a>
+					<a class="button" href="#Assurance">Assurance</a>
+				</div>
 
+				<div class="scroll-info">
+					scroll down to find out more
 					<br />
-					<div class="scroll-info">
-						scroll down to find out more
-						<br />
-						⌄
-					</div>
+					⌄
 				</div>
 			</section>
 
@@ -114,28 +117,25 @@
 				<h2>About us</h2>
 				<div class="has-3-columns">
 					<div>
-						<h3>Nunc et nulla eu justo mollis tincidunt.</h3>
+						<h3>Experience</h3>
 
-						<p>Integer nec massa vel nisi dignissim tristique at porta massa. Proin rutrum cursus eros, in scelerisque turpis volutpat in. Pellentesque consectetur, arcu eget feugiat suscipit, magna massa volutpat tellus, at blandit turpis urna non lacus. Nam ac ex eget lorem ornare eleifend vel nec orci. Aenean ullamcorper erat vitae urna hendrerit, id mattis arcu malesuada. Cras malesuada neque urna, vel pretium tellus malesuada nec. Maecenas aliquam ex ut justo convallis, nec ullamcorper nulla tincidunt. Aliquam auctor nisi quis tincidunt rhoncus. Proin fermentum luctus ligula, vel sollicitudin arcu auctor sit amet. Curabitur condimentum purus at purus pellentesque viverra. Maecenas suscipit sapien at nibh lacinia sagittis.</p>
+						<p><strong>Our people have worked in the UK financial services sector for more than 20 years</strong> and have experience across multiple risk types. They’ve been part of strategic change programmes, supported policy review and implementation following regulatory changes, as well as embedding business wide enhancements of Risk Management Frameworks and Risk & Control Self-Assessment processes, including increasing colleague capability by designing and providing training.
+						</p>
 					</div>
 					<div>
-						<h3>Lorem ipsum dolor sit.</h3>
+						<h3>Application</h3>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
-
-						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
-						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+						<p>By leveraging this expertise, we can help you and your business with a wide range of requirements. <strong>Our real specialism is Operational Risk and Operational Resilience</strong> where we can provide independent assurance on change programmes, ensuring internal policy and external regulation are met. We can perform root cause analysis on risk and breach events, including those requiring escalation to the ICO, and where confidentiality is critical / NDA required for particularly sensitive cases.</p>
 					</div>
 					<div>
-						<h3>Ut consequat felis et turpis facilisis.</h3>
+						<h3>Approach</h3>
 
-						<p>Morbi ac dignissim nisl. Ut consequat felis et turpis facilisis, vel malesuada justo bibendum. Fusce non vulputate sapien. Duis dictum augue ac ligula bibendum accumsan. Duis semper sodales tortor, hendrerit finibus eros accumsan sit amet. Sed rutrum pulvinar sapien, eu lacinia magna interdum ac. Phasellus maximus justo non porttitor consequat. Vivamus non justo ligula.</p>
-						<p>Morbi ac dignissim nisl. Ut consequat felis et turpis facilisis, vel malesuada justo bibendum. Fusce non vulputate sapien. Duis dictum augue ac ligula bibendum accumsan. Duis semper sodales tortor, hendrerit finibus eros accumsan sit amet. Sed rutrum pulvinar sapien, eu lacinia magna interdum ac. Phasellus maximus justo non porttitor consequat. Vivamus non justo ligula.</p>
+						<p><strong>We are passionate about getting it right first time, keeping it simple</strong>, and wherever possible, thinking about innovation or enhanced system infrastructure / blue print to assist with automation, as well as colleague capability and any communication as required. Ultimately, we are here to support you achieving success and making a real difference to your colleagues, business and your customers.</p>
 					</div>
 				</div>
 				<a class="button hero" href="#Resilience">Resilience</a>
 
-				<img src="/assets/business01.5c1ba5c2.jpg" />
+				<div class="img"></div>
 			</section>
 
 			<!-- /////////////////////////////////////////////////////////////////
@@ -146,64 +146,98 @@
 
 			<a id="Resilience"></a>
 			<section class="white resilience">
-				<div class="tag-line">Lorem ipsum dolor sit amet</div>
+				<div class="tag-line">A real opportunity for simplification and standardisation</div>
 				<h1>Operational Resilience</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
-				<img src="/assets/edinburgh01.60909ada.jpg" />
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+
+				<img src="/assets/tree02.6e4eee11.jpg" alt="tree" />
+
+				<p><strong>Within the UK, there is a more regulatory focus and scrutiny on Operational Resilience that ever before. Financial institutions are now required to do more in this space, and clear guidelines and expectations have been set by the <a href="https://www.fca.org.uk/firms/operational-resilience" target="thirdParty">FCA</a> and <a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/operational-resilience-sop" target="thirdParty">PRA</a>, which now need to be met.</strong></p>
+
+				<p><strong>Those firms in scope of these regulations, need to have performed the initial assessments by March 2022, and should now be working towards the March 2025 deadline</strong>. This will take time and the various complexities of your firms structure, will bring with it some unique challenges, however this should also been seen as a real opportunity for simplification and standardisation, and perhaps just lifting the lid on topics and process which have not had much visibility previously.</p>
+
+
+				<p>If you are looking for some SME guidance or support for a specifics project, or a programme of activities you intend to complete by March 2025, please reach out. We are more than happy to talk through your requirements and build out bespoke options for you, to ensure value add, as well as regulatory compliance.</p>
+
+				<p>Although the UK regulation is very much focused on the financial services sector, the principles are sound and can be considered best practice which could be applied across any sector. If you have appetite to apply these types standards to how you do business, then <a href="mailto:Mollitiam.cs@gmail.com">please do get in touch.</a></p>
+
 				<a class="button hero" href="#Risk">Risk</a>
 			</section>
+
+			<!-- /////////////////////////////////////////////////////////////////
+
+			Image banner
+
+			///////////////////////////////////////////////////////////////// -->
+
+			<div class="image-banner">
+				<div class="content">
+					<h2>"We are passionate about getting it right first time and keeping it simple."</h2>
+					<div class="name">
+						James Ranklin
+					</div>
+					<br />
+					<div class="title">
+						Managing Director, Mollitiam Consultancy Services
+					</div>
+				</div>
+			</div>
+
+			<!-- /////////////////////////////////////////////////////////////////
+
+			Risk
+
+			///////////////////////////////////////////////////////////////// -->
 
 
 			<a id="Risk"></a>
 			<section class="blue risk">
-				<div class="tag-line">Lorem ipsum dolor sit amet</div>
+				<div class="tag-line">creating a no blame culture</div>
 				<h1>Operational Risk</h1>
+				<img class="risk-image" src="/assets/bridge.ac668f9b.jpg" alt="bridge" />
 				<div class="has-2-columns">
 					<div>
-						<h3>Nunc et nulla eu justo mollis tincidunt.</h3>
+						<p><strong>Operational Risk runs through everything you do in your business and can occur within any process or activity.</strong>  It is therefore critical that operational risks are quickly identified, assessed, managed and reported. Having worked in operational risk for many years, we can help you identify where enhancements to your processes can be made following an event or breach, or support you in creating a more robust operational risk framework and control environment.</p>
 
-						<p>Integer nec massa vel nisi dignissim tristique at porta massa. Proin rutrum cursus eros, in scelerisque turpis volutpat in. Pellentesque consectetur, arcu eget feugiat suscipit, magna massa volutpat tellus, at blandit turpis urna non lacus. Nam ac ex eget lorem ornare eleifend vel nec orci. Aenean ullamcorper erat vitae urna hendrerit, id mattis arcu malesuada. Cras malesuada neque urna, vel pretium tellus malesuada nec. Maecenas aliquam ex ut justo convallis, nec ullamcorper nulla tincidunt. Aliquam auctor nisi quis tincidunt rhoncus. Proin fermentum luctus ligula, vel sollicitudin arcu auctor sit amet. Curabitur condimentum purus at purus pellentesque viverra. Maecenas suscipit sapien at nibh lacinia sagittis.</p>
+						<p>Although there is a significant focus on operational risk within the banking and finance sector, these types of risks can occur in any sector, in any business, as they are driven by inadequate process, failed controls or systems, as well as from both internal or external events.</p>
 					</div>
+
 					<div>
-						<h3>Lorem ipsum dolor sit.</h3>
+						<p><strong>We have extensive experience in providing operational risk training</strong> to embed a better understanding of why these risks need to be reported. We can help you identify and understand volumes and values of such risk events, trends and potentially unidentified hot spots, as well as creating a no blame culture to encourage more reporting. If these types of risk go unreported, then its impossible to fix them and improve the risk profile / landscape, and prevent reoccurrence.</p>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
-
-						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
-						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+						<a class="button hero green" href="#Assurance">Assurance</a>
 					</div>
-				</div>
-				<a class="button hero green" href="#Assurance">Assurance</a>
-
-				<div class="images">
-					<img src="/assets/business02.86cab98d.jpg" />
-					<br />
-					<img src="/assets/business03.28301e04.jpg" />
-					<br />
-					<a class="button hero" href="mailto:email@email.com">Get in touch</a>
 				</div>
 			</section>
 
+			<!-- /////////////////////////////////////////////////////////////////
+
+			Assurance
+
+			///////////////////////////////////////////////////////////////// -->
+
 			<a id="Assurance"></a>
 			<section class="assurance">
-				<div class="tag-line">Lorem ipsum dolor sit amet</div>
-				<h1>Project Assurance</h1>
+				<div class="images">
+					<img src="/assets/business02.86cab98d.jpg" alt="business02" />
+					<br />
+					<img src="/assets/business03.28301e04.jpg" alt="business03" />
+					<br />
+				</div>
+				<div class="tag-line">complementing your project management resource</div>
+				<h1>Project Support and Governance</h1>
 
 				<div class="has-2-columns">
 					<div>
-						<h3>Nunc et nulla eu justo mollis tincidunt.</h3>
+						<h3>Our approach</h3>
 
-						<p>Integer nec massa vel nisi dignissim tristique at porta massa. Proin rutrum cursus eros, in scelerisque turpis volutpat in. Pellentesque consectetur, arcu eget feugiat suscipit, magna massa volutpat tellus, at blandit turpis urna non lacus. Nam ac ex eget lorem ornare eleifend vel nec orci. Aenean ullamcorper erat vitae urna hendrerit, id mattis arcu malesuada. Cras malesuada neque urna, vel pretium tellus malesuada nec. Maecenas aliquam ex ut justo convallis, nec ullamcorper nulla tincidunt. Aliquam auctor nisi quis tincidunt rhoncus. Proin fermentum luctus ligula, vel sollicitudin arcu auctor sit amet. Curabitur condimentum purus at purus pellentesque viverra. Maecenas suscipit sapien at nibh lacinia sagittis.</p>
+						<p>We can complement your project management resource by providing specialist SME knowledge on risk identification, mitigation, control creation, governance and oversight / assurance. We can assist your programme leads with the interpretation of internal policy and the complexities of external regulation, including <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/" target="thirdParty">Data Protection</a>  and <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/" target="thirdParty">GDPR</a>, to ensure that there are no unintended breaches or ICO reportable events when running change activities, partially those which are handling large amounts of personal data.</p>
 					</div>
 					<div>
-						<h3>Lorem ipsum dolor sit.</h3>
+						<h3>Contact us</h3>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget purus sed odio tincidunt mattis. Sed feugiat odio justo, eu egestas diam accumsan at. Nunc non enim massa. Duis eu urna magna. Aenean pretium neque eget neque mollis, nec molestie quam suscipit. Quisque lectus turpis, luctus et est nec, porta ornare lectus. Mauris arcu eros, imperdiet ut elementum sit amet, laoreet vel velit.</p>
+						<p>If you would like to discuss the specifics of your project or priorities and think we might be able to help, we would be delighted to speak to you.</p>
 
-						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
-						<p>Donec scelerisque suscipit libero eu aliquet. Morbi commodo lorem in diam maximus malesuada. Praesent purus neque, imperdiet ut hendrerit </p>
+						<p>Please ether email us at <a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a>, or if you would prefer to speak to a real person, you can phone our <strong>Managing Director, James Ranklin</strong> on <a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></p>
 					</div>
 				</div>
 			</section>
@@ -218,19 +252,20 @@
 							<li>City</li>
 							<li>County</li>
 							<li>Country</li>
-							<li><a href="https://maps.google.com/maps?q=BA1 1SS">BA1 1SS</a></li>
+							<li><a href="https://maps.google.com/maps?q=BA1 1SS" target="thirdParty">BA1 1SS</a></li>
 						</ul>
 					</div>
 					<div>
 						<h3>Contact details</h3>
 						<ul>
-							<li><a href="mailto:email@email.com">email@email.com</a></li>
+							<li><a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li>
 							<li><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
 						</ul>
 					</div>
 					<div>
 						<h3>Site map</h3>
 						<ul>
+							<li><a href="#Home">Home</a></li>
 							<li><a href="#About">About</a></li>
 							<li><a href="#Resilience">Resilience</a></li>
 							<li><a href="#Risk">Risk</a></li>
@@ -239,11 +274,9 @@
 					</div>
 					<div>
 
-						<h3>Social links</h3>
+						<h3>Company number</h3>
 						<ul>
-							<li><a href="tbc">LinkedIn</a></li>
-							<li><a href="tbc">Twitter</a></li>
-							<li><a href="tbc">Facebook</a></li>
+							<li>1234564567</li>
 						</ul>
 					</div>
 				</div>
@@ -252,11 +285,13 @@
 				<details>
 					<ul>
 						<li>In order of appearance:</li>
-						<li><strong>Tree</strong>: Photo by <a href="https://unsplash.com/@pedrosanz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pedro Sanz</a> on <a href="https://unsplash.com/s/photos/resilience?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+						<li><strong>Tree01</strong>: Photo by <a href="https://unsplash.com/@pedrosanz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pedro Sanz</a> on <a href="https://unsplash.com/s/photos/resilience?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
 
 						<li><strong>Business01</strong>: Photo by <a href="https://unsplash.com/@medienstuermer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Medienstürmer</a> on <a href="https://unsplash.com/s/photos/business?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+						<li><strong>Tree02</strong>: Photo by <a href="https://unsplash.com/@miikkair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Miikka Airikkala</a> on <a href="https://unsplash.com/s/photos/resilience?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
 
-						<li><strong>Edinburgh01</strong>: Photo by <a href="https://unsplash.com/@roanlavery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roan Lavery</a> on <a href="https://unsplash.com/s/photos/scotland?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+						<li><strong>Edinburgh</strong>: Photo by <a href="https://unsplash.com/@roanlavery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roan Lavery</a> on <a href="https://unsplash.com/s/photos/scotland?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
+						<li><strong>Bridge</strong>: Photo by <a href="https://unsplash.com/@valentinbetanqr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Valentín Betancur</a> on <a href="https://unsplash.com/s/photos/risk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
 
 
 						<li><strong>Business02</strong>: Photo by <a href="https://unsplash.com/@johnschno?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Schnobrich</a> on <a href="https://unsplash.com/s/photos/business?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></li>
@@ -269,10 +304,11 @@
 				</details>
 
 				<div class="copyright">
-					<img src="/assets/logo-no-tagline.1a64ffd3.png" />
-					Built and designed by <strong><a href="mailto:gav_jackson@yahoo.com">Digital-Mojo ltd.</a></strong>
+					<img src="/assets/logo-no-tagline.1a64ffd3.png" alt="logo in footer" />
 					<br />
-					<br />
+					<div class="right">
+						Website built and designed by <strong><a href="http://www.digital-mojo.com" target="thirdParty">Digital-Mojo ltd.</a></strong>
+					</div>
 					&copy; 2022 Mollitiam Consultancy Services ltd.
 				</div>
 

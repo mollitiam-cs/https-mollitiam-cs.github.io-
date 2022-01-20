@@ -1,0 +1,70 @@
+///////////////////////////////////////////////////////////
+//
+// footer
+//
+///////////////////////////////////////////////////////////
+
+footer{
+	.gradient(black, black, lighten(black, 10%));
+	min-height: 400px;
+
+	h3{
+		border-bottom: 1px solid fade(white, 20%);
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li{
+			margin-bottom: 10px;
+
+			strong{
+				color: white;
+			}
+		}
+
+	}
+
+	color: fade(white, 70%);
+	a{
+		color: white;
+		text-decoration: none;
+
+		&:hover{
+			color: @green;
+			text-decoration: none;
+		}
+	}
+
+	details{
+		border-top: 1px solid fade(white, 10%);
+		margin-top: 50px;
+		margin-bottom: 10px;
+		padding-top: 30px;
+
+		summary{
+			font-size: 18px;
+			font-weight: 100;
+			padding-bottom: 20px;
+			cursor: pointer;
+		}
+	}
+
+	.copyright{
+		margin-top: 10px;
+		border-top: 1px solid fade(white, 20%);
+		padding-top: 30px;
+
+		.right{
+			float: right;
+			text-align: right;
+		}
+
+		img{
+			width: 160px;
+			margin-top: 0;
+		}
+	}
+}
