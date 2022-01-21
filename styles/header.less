@@ -132,6 +132,8 @@ html.showing-menu{
 	bottom: 0;
 	z-index: 3;
 	pointer-events: none;
+	overflow: auto;
+	display: none;
 
 	ul{
 		list-style: none;
@@ -186,11 +188,19 @@ html.showing-menu{
 				font-size: 18px;
 				color: fade(white, 30%);
 				margin-bottom: -10px;
+
+				@media (max-width: @threshold3) {
+					margin-top: 10px;
+				}
 			}
 
 		}
 		&.contact{
 			margin-top: 100px;
+
+			@media (max-width: @threshold3) {
+				margin-top: 50px;
+			}
 
 			li {
 				border-top: 1px solid fade(white, 50%);
@@ -203,7 +213,16 @@ html.showing-menu{
 				}
 
 				@media (max-width: @threshold3) {
+					font-size: 18px;
 					border: none;
+					display: block;
+					float: none;
+					text-align: right;
+					line-height: 33px;
+
+					a{
+						line-height: 33px;
+					}
 				}
 			}
 		}

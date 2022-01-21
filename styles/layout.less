@@ -22,6 +22,7 @@ main{
 	background-image: url("/assets/images/tree01.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
+	overflow: hidden;
 }
 
 ///////////////////////////////////////////////////////////
@@ -46,6 +47,12 @@ main{
 	align-items: center;
 	justify-content: center;
 
+
+	@media (max-width: @threshold3) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
 	.content{
 		max-width: 800px;
 	}
@@ -55,13 +62,14 @@ main{
 		font-weight: 300;
 		line-height: 35px;
 		font-style: italic;
-	}
 
-	blockquote{
-		font-size: 25px;
-		line-height: 30px;
-		color: white;
-		font-weight: 400;
+		@media (max-width: @threshold3) {
+			font-size: 30px;
+		}
+
+		@media (max-width: @threshold4) {
+			font-size: 20px;
+		}
 	}
 
 	.title,
@@ -75,6 +83,10 @@ main{
 
 	.title{
 		margin-top: -30px;
+
+		@media (max-width: @threshold4) {
+			font-size: 13px;
+		}
 	}
 
 	.name{
