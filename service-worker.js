@@ -13,7 +13,7 @@ self.addEventListener("install", e => {
 
 self.addEventListener('fetch', (event) => {
 	// we only care about http requests (ie not chrome extensions)
-	if(/^http/.test(event.request.url)) {
+	if(/^http/.test(event.request.url) && event.request.url.indexOf('google-analytics') !== -1) {
 		// ignore querystring params for any static resources
 		const isStaticResource = (/\.(json|md|woff|js|css|less|html|png|woff2|txt)/.test(event.request.url));
 		event.respondWith(
