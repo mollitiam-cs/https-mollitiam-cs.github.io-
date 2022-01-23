@@ -37,7 +37,7 @@
 			if ('serviceWorker' in navigator) {
 				// Use the window load event to keep the page load performant
 				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('/service-worker.js');
+					// navigator.serviceWorker.register('/service-worker.js');
 				});
 			}
 		</script>
@@ -74,13 +74,14 @@
 
 		<style>
 			html{
-				background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#124778),color-stop(1,#6dade9));
+				background-color: black;
 			}
 
 			.loader{
-				background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#124778),color-stop(1,#6dade9));
+				background-color: rgba(0,0,0,1);
 				position: fixed;
 				transition: all 1s linear;
+				transition-delay: 1s;
 				left: 0;
 				right: 0;
 				top: 0;
@@ -94,14 +95,32 @@
 				font-size: 10px;
 				text-align: center;
 				pointer-events: none;
+				background-repeat: no-repeat;
+				background-position: center center;
 			}
 
 			.loader .img.logo{
-				background-image: url("/assets/logos/logo-no-tagline.png");
+				background-image: url("/assets/logos/logo192.png");
 				background-size: contain;
-				width: 160px;
-				height: 24px;
+				width: 75px;
+				height: 75px;
 			}
+
+			.dots-5 {
+				width:5px;
+				height:5px;
+				background: #19992E;
+				border-radius: 50%;
+				box-shadow: 10px 0 #19992E22,-10px 0 #19992E;
+				animation:d5 1s infinite linear alternate;
+				margin: 0 auto;
+			}
+			@keyframes d5 {
+				0% {box-shadow: 10px 0 #19992E,-10px 0 #19992E22;background: #19992E}
+				33%{box-shadow: 10px 0 #19992E,-10px 0 #19992E22;background: #19992E22}
+				66%{box-shadow: 10px 0 #19992E22,-10px 0 #19992E;background: #19992E22}
+			}
+
 
 			html.loaded .loader{
 				opacity: 0;
@@ -116,8 +135,10 @@
 		<div class="loader">
 			<div>
 				<div class="img logo"></div>
+				<div class="dots-5"></div>
 			</div>
 		</div>
+
 		<main>
 			<header>
 				<a href="#Home" class="logo" aria-label="Home" role="link"></a>
