@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<title>Mollitiam Consultancy Services</title>
 		<link rel="icon" href="data:,">
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
 		<meta name="description" content="We can complement your project management resource by providing specialist SME knowledge on risk identification, mitigation, control creation, governance and oversight / assurance. " />
-		<title>Mollitiam Consultancy Services</title>
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'  https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
@@ -55,6 +56,8 @@
 			}
 
 			window.onload = () => {
+				document.querySelector('html').classList.add('loaded');
+
 				const home = document.querySelectorAll('section.home')[0];
 				const observer = new IntersectionObserver(elements =>{
 					if(!elements[0].isIntersecting){
@@ -69,20 +72,61 @@
 			}
 		</script>
 
+		<style>
+			html{
+				background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#124778),color-stop(1,#6dade9));
+			}
+
+			.loader{
+				background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#124778),color-stop(1,#6dade9));
+				position: fixed;
+				transition: all 1s linear;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 99;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: Arial, sans-serif;
+				color: white;
+				font-size: 10px;
+				text-align: center;
+				pointer-events: none;
+			}
+
+			.loader .img.logo{
+				background-image: url("/assets/logos/logo-no-tagline.png");
+				background-size: contain;
+				width: 160px;
+				height: 24px;
+			}
+
+			html.loaded .loader{
+				opacity: 0;
+			}
+		</style>
+
 
 		<script type="module" crossorigin src="/assets/index.42fe4937.js"></script>
 		<link rel="stylesheet" href="/assets/index.031e96e0.css">
 	</head>
 	<body>
+		<div class="loader">
+			<div>
+				<div class="img logo"></div>
+			</div>
+		</div>
 		<main>
 			<header>
-				<a href="#Home" class="logo" aria-label="Home"></a>
+				<a href="#Home" class="logo" aria-label="Home" role="link"></a>
 				<nav>
 					<ul>
 						<li class="hide-threshold3"><a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li>
 						<li class="hide-threshold3"><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
 						<li class="menu">
-							<a onclick="showMenu()" aria-label="Open menu">
+							<a onclick="showMenu()" aria-label="Open menu" role="button">
 								<span class="img menu"></span>
 							</a>
 						</li>
