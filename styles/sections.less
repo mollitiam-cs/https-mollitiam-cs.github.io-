@@ -158,8 +158,13 @@ section, footer{
 			}
 		}
 
-		.logo {
+		.img.logo {
+			background-image: url("/assets/logos/logo-white.png");
 			width: 450px;
+			height: 128px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center bottom;
 			align-self: end;
 
 			@media (max-width: @threshold2) {
@@ -288,19 +293,22 @@ section, footer{
 			}
 		}
 
-		img{
+		.img.tree{
+			background-image: url("/assets/images/tree02.jpg");
 			//float: left;
 			//margin: 50px;
 			margin-top: 0;
 			margin-left: 0;
-			max-width: 400px;
+			width: 400px;
+			background-repeat: no-repeat;
+			background-position: top right;
 
 			@media (max-width: @threshold1) {
-				max-width: 300px;
+				width: 300px;
 			}
 
 			@media (max-width: @threshold2) {
-				max-width: 200px;
+				width: 200px;
 			}
 
 			@media (max-width: @threshold3) {
@@ -326,7 +334,7 @@ section, footer{
 				"top right"
 				"middle right";
 
-				img.risk-image {
+				.img.risk {
 					grid-area: right;
 				}
 
@@ -357,11 +365,20 @@ section, footer{
 			z-index: 1;
 		}
 
-		img.risk-image{
-			max-width: 300px;
+		.img.risk{
+			width: 300px;
+			height: 450px;
+			background-image: url("/assets/images/bridge.jpg");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+
+			@media (max-width: @threshold1) {
+				float: right;
+			}
 
 			@media (max-width: @threshold2) {
-				max-width: 250px;
+				width: 250px;
 			}
 
 			@media (max-width: @threshold3) {
@@ -387,16 +404,30 @@ section, footer{
 			color: @green;
 		}
 
+		h1{
+			max-width: 600px;
+		}
+
 		a:not(.button){
 			color: lighten(@blue, 20%);
 		}
 
-		img {
-			max-width: 300px;
+		.img {
+			width: 300px;
+			height: 200px;
 			margin-bottom: 50px;
+			background-size: contain;
+
+			&.business02{
+				background-image: url("/assets/images/business02.jpg");
+			}
+
+			&.business03{
+				background-image: url("/assets/images/business03.jpg");
+			}
 
 			@media (max-width: @threshold1) {
-				max-width: 250px;
+				width: 250px;
 				margin-bottom: 25px;
 			}
 

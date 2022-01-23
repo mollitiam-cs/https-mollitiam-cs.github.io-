@@ -3,11 +3,48 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" href="data:,">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+		<meta name="description" content="We can complement your project management resource by providing specialist SME knowledge on risk identification, mitigation, control creation, governance and oversight / assurance. " />
 		<title>Mollitiam Consultancy Services</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+		<!-- ///////////////////////////////
+		GA
+		/////////////////////////////// -->
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-163WGF8N4S"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-163WGF8N4S');
+		</script>
+
+		<!-- ///////////////////////////////
+		PWA
+		/////////////////////////////// -->
+
+		<link rel="manifest" href="data:application/json;base64,ewoJIm5hbWUiOiAiTW9sbGl0aWFtIENvbnN1bHRhbmN5IFNlcnZpY2VzIiwKCSJzaG9ydF9uYW1lIjogIk1vbGxpdGlhbSIsCgkic3RhcnRfdXJsIjogIi4iLAoJImJhY2tncm91bmRfY29sb3IiOiAiIzAwMDAwMCIsCgkidGhlbWVfY29sb3IiOiAiIzAwMDAwMCIsCgkiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKCSJpY29ucyI6IFsKCQl7CgkJCSJzcmMiOiAiL2Fzc2V0cy9sb2dvcy9sb2dvMTkyLnBuZyIsCgkJCSJzaXplcyI6ICIxOTJ4MTkyIiwKCQkJInR5cGUiOiAiaW1hZ2UvcG5nIiwKCQkJInB1cnBvc2UiOiAibWFza2FibGUiCgkJfSwKCQl7CgkJCSJzcmMiOiAiL2Fzc2V0cy9sb2dvcy9sb2dvNTEyLnBuZyIsCgkJCSJzaXplcyI6ICI1MTJ4NTEyIiwKCQkJInR5cGUiOiAiaW1hZ2UvcG5nIgoJCX0KCV0KfQ==" />
+		<meta name="theme-color" content="#000000" />
+		<link rel="apple-touch-icon" href="/assets/logo-no-tagline.1a64ffd3.png" />
+		<script>
+			// Check that service workers are supported
+			if ('serviceWorker' in navigator) {
+				// Use the window load event to keep the page load performant
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/service-worker.js');
+				});
+			}
+		</script>
+
+		<!-- ///////////////////////////////
+		site scripts
+		/////////////////////////////// -->
+
 		<script>
 			function showMenu(){
 				document.querySelector('html').classList.add('showing-menu');
@@ -32,20 +69,21 @@
 			}
 		</script>
 
+
 		<script type="module" crossorigin src="/assets/index.42fe4937.js"></script>
-		<link rel="stylesheet" href="/assets/index.fca4cf21.css">
+		<link rel="stylesheet" href="/assets/index.031e96e0.css">
 	</head>
 	<body>
 		<main>
 			<header>
-				<a href="#Home" class="logo"></a>
+				<a href="#Home" class="logo" aria-label="Home"></a>
 				<nav>
 					<ul>
 						<li class="hide-threshold3"><a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li>
 						<li class="hide-threshold3"><a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li>
 						<li class="menu">
-							<a onclick="showMenu()">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAYAAACGVs+MAAAAXklEQVRIie2VOQrAMAwEd4O/l9fmgUplyEXAEFkpZiqjxovYQQKoxv3/iLhG2bKz2V6X23QybxtIx7bKN0CAdnint/4BLKCEBDhpOMoX2qIhJfy3BTOOU70FALVI2gGpuBAt04aCAwAAAABJRU5ErkJggg==" alt="menu icon"/>
+							<a onclick="showMenu()" aria-label="Open menu">
+								<span class="img menu"></span>
 							</a>
 						</li>
 					</ul>
@@ -55,7 +93,7 @@
 			<div class="mobile-menu">
 				<ul>
 					<li>
-						<img class="logo" src="/assets/logo-no-tagline.1a64ffd3.png" alt="logo no tagline"/>
+						<div class="img logo"></div>
 						<a class="close" onclick="hideMenu()">X</a>
 						<br />
 						<strong>MENU</strong>
@@ -87,7 +125,7 @@
 					<h1>Welcome to Mollitiam Consultancy Services</h1>
 				</div>
 
-				<img class="logo" src="/assets/logo-white.6ec41f98.png" alt="logo white" />
+				<div class="img logo"></div>
 
 				<div class="buttons">
 					<a class="button hero" href="#About">About</a>
@@ -150,7 +188,7 @@
 				<h1>Operational Resilience</h1>
 
 				<div class="has-2-columns">
-					<img src="/assets/tree02.6e4eee11.jpg" alt="tree" />
+					<div class="img tree"></div>
 
 					<div>
 						<p><strong>Within the UK, there is a more regulatory focus and scrutiny on Operational Resilience that ever before. Financial institutions are now required to do more in this space, and clear guidelines and expectations have been set by the <a href="https://www.fca.org.uk/firms/operational-resilience" target="thirdParty">FCA</a> and <a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/operational-resilience-sop" target="thirdParty">PRA</a>, which now need to be met.</strong></p>
@@ -199,7 +237,7 @@
 				<h1>Operational Risk</h1>
 				<div class="has-3-columns">
 					<div>
-						<h3>A more robust operational risk framework and control environment</h3>
+						<h2>Supporting you</h2>
 
 						<p><strong>Operational Risk runs through everything you do in your business and can occur within any process or activity.</strong>  It is therefore critical that operational risks are quickly identified, assessed, managed and reported. Having worked in operational risk for many years, we can help you identify where enhancements to your processes can be made following an event or breach, or support you in creating a more robust operational risk framework and control environment.</p>
 
@@ -207,13 +245,13 @@
 					</div>
 
 					<div>
-						<h3>Identifying risk</h3>
+						<h2>Identifying risk</h2>
 						<p><strong>We have extensive experience in providing operational risk training</strong> to embed a better understanding of why these risks need to be reported. We can help you identify and understand volumes and values of such risk events, trends and potentially unidentified hot spots, as well as creating a no blame culture to encourage more reporting. If these types of risk go unreported, then its impossible to fix them and improve the risk profile / landscape, and prevent reoccurrence.</p>
 
 						<a class="button hero green" href="#Assurance">Assurance</a>
 					</div>
 
-					<img class="risk-image" src="/assets/bridge.ac668f9b.jpg" alt="bridge" />
+					<div class="img risk"></div>
 				</div>
 			</section>
 
@@ -230,12 +268,12 @@
 
 				<div class="has-3-columns">
 					<div>
-						<h3>Our approach</h3>
+						<h2>Our approach</h2>
 
 						<p>We can complement your project management resource by providing specialist SME knowledge on risk identification, mitigation, control creation, governance and oversight / assurance. We can assist your programme leads with the interpretation of internal policy and the complexities of external regulation, including <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/" target="thirdParty">Data Protection</a>  and <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/" target="thirdParty">GDPR</a>, to ensure that there are no unintended breaches or ICO reportable events when running change activities, partially those which are handling large amounts of personal data.</p>
 					</div>
 					<div>
-						<h3>Contact us</h3>
+						<h2>Contact us</h2>
 
 						<p>If you would like to discuss the specifics of your project or priorities and think we might be able to help, we would be delighted to speak to you.</p>
 
@@ -243,9 +281,8 @@
 					</div>
 
 					<div class="images">
-						<img src="/assets/business02.86cab98d.jpg" alt="business02" />
-						<br />
-						<img src="/assets/business03.28301e04.jpg" alt="business03" />
+						<div class="img business02"></div>
+						<div class="img business03"></div>
 						<br />
 					</div>
 				</div>
@@ -308,7 +345,7 @@
 				</details>
 
 				<div class="copyright">
-					<img src="/assets/logo-no-tagline.1a64ffd3.png" alt="logo in footer" />
+					<div class="img logo"></div>
 					<br />
 					<div class="right">
 						Website built and designed by<br /><strong><a href="http://www.digital-mojo.com" target="thirdParty">Digital-Mojo ltd.</a></strong>
