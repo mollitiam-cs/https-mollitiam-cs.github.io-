@@ -27,3 +27,10 @@ Design
 ------
 
 https://dribbble.com/shots/10555139/attachments/2346736?mode=media
+
+Notes
+-----
+
+whats app link...
+
+<a href="https://wa.me/447XXXXXXXX6">Whats App test</a>
