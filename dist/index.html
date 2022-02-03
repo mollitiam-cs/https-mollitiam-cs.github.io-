@@ -67,11 +67,39 @@
 					}
 				});
 
-				observer.observe(home)
+				observer.observe(home);
+
+				const animatedList = document.querySelectorAll('.animated');
+				const animatedObserver = new IntersectionObserver(entries =>{
+					entries.forEach(entry => {
+						// Add 'active' class if observation target is inside viewport
+						if (entry.isIntersecting) {
+							const delay = entry.target.getAttribute('data-delay') || 1;
+							window.setTimeout((entry) => {
+								entry.target.style.animationName = entry.target.getAttribute('data-animation');
+								entry.target.style.visibility = 'visible';
+							}, delay, entry);
+						}
+					});
+				});
+
+				animatedList.forEach((el) => {
+					el.setAttribute('data-animation', el.style.animationName);
+					el.style.visibility = 'hidden';
+					el.style.animationName = 'unset';
+					animatedObserver.observe(el);
+				});
+
+
 			}
 		</script>
 
 		<style>
+			/*.animated {*/
+			/*	width: 0;*/
+			/*	height: 0;*/
+			/*}*/
+
 			html{
 				background-color: black;
 			}
@@ -130,7 +158,7 @@
 
 
 		<script type="module" crossorigin src="/assets/index.42fe4937.js"></script>
-		<link rel="stylesheet" href="/assets/index.7aeafdbb.css">
+		<link rel="stylesheet" href="/assets/index.bb728d5d.css">
 	</head>
 	<body>
 		<div class="loader">
@@ -218,30 +246,30 @@
 
 			<a id="About"></a>
 			<section class="about">
-				<h2>About us</h2>
+				<h2 class="animated slideInLeft">About us</h2>
 				<div class="has-3-columns">
-					<div>
+					<div class="animated fadeInUp" data-delay="250">
 						<h3>Experience</h3>
 
 						<p><strong>Having worked in the UK financial services sector for more than 20 years</strong>, gaining experience across multiple risk types, working in strategic change programmes, policy review and implementation following regulatory change, and embedding business wide enhancements of Risk Management Frameworks and Risk & Control Self-Assessment processes, we can add real value to your business, including designing and providing bespoke training to your colleagues.
 
 						</p>
 					</div>
-					<div>
+					<div class="animated fadeInUp" data-delay="500">
 						<h3>Application</h3>
 
 						<p>By leveraging this expertise, we can help you and your business with a wide range of requirements. <strong>Our real specialism is Operational Risk and Operational Resilience</strong> where we can provide independent assurance on change programmes, ensuring internal policy and external regulation are met. We can perform root cause analysis on risk and breach events, including those requiring escalation to the ICO, and where confidentiality is critical / NDA required for particularly sensitive cases.</p>
 					</div>
-					<div>
+					<div class="animated fadeInUp" data-delay="750">
 						<h3>Approach</h3>
 
 						<p><strong>We are passionate about getting it right first time, keeping it simple</strong>, and wherever possible, thinking about innovation or an enhanced system infrastructure / blue print, to assist with automation, as well as colleague capability and any communication as required. Ultimately, we are here to support you achieving success and making a real difference to your colleagues, business and your customers.
 						</p>
 					</div>
 				</div>
-				<a class="button hero" href="#Resilience">Resilience</a>
+				<a class="button hero animated zoomIn" href="#Resilience">Resilience</a>
 
-				<div class="img"></div>
+				<div class="img animated fadeInRight" data-delay="1250"></div>
 			</section>
 
 			<!-- /////////////////////////////////////////////////////////////////
@@ -252,14 +280,14 @@
 
 			<a id="Resilience"></a>
 			<section class="white resilience">
-				<div class="tag-line">A real opportunity for simplification and standardisation</div>
-				<h1>Operational Resilience</h1>
+				<div class="tag-line animated fadeIn" data-delay="2000">A real opportunity for simplification and standardisation</div>
+				<h1 class="animated fadeInLeft">Operational Resilience</h1>
 
 				<div class="has-2-columns">
-					<div class="img tree"></div>
+					<div class="img tree animated fadeIn" data-delay="500"></div>
 
-					<div>
-						<p><strong>Within the UK, there is more regulatory focus and scrutiny on Operational Resilience that ever before. Financial institutions are now required to do more in this space, and clear guidelines and expectations have been set by the <a href="https://www.fca.org.uk/firms/operational-resilience" target="thirdParty">FCA</a> and <a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/operational-resilience-sop" target="thirdParty">PRA</a>, which now need to be met.</strong></p>
+					<div class="animated fadeIn" data-delay="1000">
+						<p><strong>Within the UK, there is more regulatory focus and scrutiny on Operational Resilience than ever before. Financial institutions are now required to do more in this space, and clear guidelines and expectations have been set by the <a href="https://www.fca.org.uk/firms/operational-resilience" target="thirdParty">FCA</a> and <a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/operational-resilience-sop" target="thirdParty">PRA</a>, which now need to be met.</strong></p>
 
 						<p><strong>Those firms in scope of these regulations, need to complete their initial assessments by March 2022, and should now be working towards the March 2025 deadline</strong>. This will take time as you navigate various complexities and some unique challenges, however this should also be seen as a real opportunity for simplification and standardisation, especially with those processes which are treated a BAU, as they are not often reviewed. Therefore, this is an opportunity to pause and reflect, and drive improvements, as well as compliance with the new requirements.
 						</p>
@@ -269,7 +297,7 @@
 
 						<p>Although the UK regulation is very much focused on the financial services sector, the principles are sound and can be considered best practice, and something which could be applied across any sector. If you have appetite to apply these types standards to your business, then <a href="mailto:Mollitiam.cs@gmail.com">please do get in touch.</a></p>
 
-						<a class="button hero" href="#Risk">Risk</a>
+						<a class="button hero animated zoomIn" href="#Risk">Risk</a>
 					</div>
 				</div>
 			</section>
@@ -282,13 +310,16 @@
 
 			<div class="image-banner">
 				<div class="content">
-					<h2>"We are passionate about getting it right first time and keeping it simple."</h2>
-					<div class="name">
-						James Ranklin
-					</div>
-					<br />
-					<div class="title">
-						Managing Director, Mollitiam Consultancy Services
+					<h2 class="animated fadeInDown">"We are passionate about getting it right first time and keeping it simple."</h2>
+
+					<div class="animated fadeInDown" data-delay="500">
+						<div class="name">
+							James Ranklin
+						</div>
+						<br />
+						<div class="title">
+							Managing Director, Mollitiam Consultancy Services
+						</div>
 					</div>
 				</div>
 			</div>
@@ -302,10 +333,10 @@
 
 			<a id="Risk"></a>
 			<section class="blue risk">
-				<div class="tag-line">creating a no blame culture</div>
-				<h1>Operational Risk</h1>
+				<div class="tag-line animated fadeIn" data-delay="1000">creating a no blame culture</div>
+				<h1 class="animated fadeInLeft">Operational Risk</h1>
 				<div class="has-3-columns">
-					<div>
+					<div class="animated fadeIn" data-delay="500">
 						<h2>Supporting you</h2>
 
 						<p><strong>Operational Risk runs through everything you do in your business and can occur within any process or activity.</strong>  It is therefore critical that operational risks are quickly identified, assessed, managed and reported. Having worked in operational risk for many years, we can help you identify where enhancements to your processes can be made following an event or breach, or support you in creating a more robust operational risk framework and control environment.</p>
@@ -313,14 +344,14 @@
 						<p>Although there is a significant focus on operational risk within the banking and finance sector, these types of risks can occur in any sector, in any business, as they are driven by inadequate process, failed controls or systems, and can originate from both internal or external events.</p>
 					</div>
 
-					<div>
+					<div class="animated fadeIn" data-delay="1000">
 						<h2>Identifying risk</h2>
 						<p><strong>We have extensive experience in providing operational risk training</strong> to embed a better understanding of why these risks need to be reported. We can help you identify and understand volume and value of such risk events, trends, potentially unidentified hot spots, as well as creating a no blame culture to encourage more reporting. If these types of risk go unreported, then it's impossible to fix them, improve the risk profile / landscape, and prevent reoccurrence.  </p>
 
-						<a class="button hero green" href="#Assurance">Assurance</a>
+						<a class="button hero green animated zoomIn" href="#Assurance">Assurance</a>
 					</div>
 
-					<div class="img risk"></div>
+					<div class="img risk animated fadeIn" data-delay="1500"></div>
 				</div>
 			</section>
 
@@ -332,29 +363,29 @@
 
 			<a id="Assurance"></a>
 			<section class="assurance">
-				<div class="tag-line">complementing your project management resource</div>
-				<h1>Project Support and Governance</h1>
+				<div class="tag-line animated fadeIn" data-delay="1000">complementing your project management resource</div>
+				<h1 class="animated fadeInLeft">Project Support and Governance</h1>
 
 				<div class="has-3-columns">
-					<div>
+					<div class="animated fadeIn" data-delay="500">
 						<h2>Our approach</h2>
 
-						<p>We can complement your project management resource by providing specialist SME knowledge on risk identification, mitigation, control creation, governance and oversight / assurance. We can assist your programme leads with the interpretation of internal policy and the complexities of external regulation, including <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/" target="thirdParty">Data Protection</a>  and <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/" target="thirdParty">GDPR</a>, to ensure that there are no unintended breaches or ICO reportable events when running change activities, partially those which are handling large amounts of personal data.</p>
+						<p>We can complement your project management resource by providing specialist SME knowledge on risk identification, mitigation, control creation, governance and oversight / assurance. We can assist your programme leads with the interpretation of internal policy and the complexities of external regulation, including <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/" target="thirdParty">Data Protection</a>  and <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/" target="thirdParty">GDPR</a>, to ensure that there are no unintended breaches or ICO reportable events when running change activities, particularly those which are handling large amounts of personal data.</p>
 					</div>
-					<div>
+					<div class="animated fadeIn" data-delay="1000">
 						<h2>Contact us</h2>
 
 						<p>If you would like to discuss the specifics of your project or priorities and think we might be able to help, we would be delighted to speak to you.</p>
 
 						<p>
-							Please ether:
+							Please either:
 							<ul>
 						<li>Email us at <a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li> <li>Or call <a href="tel:+44 (0) 1234 456">+44 (0) 1234 456</a></li></ul></p>
 					</div>
 
 					<div class="images">
-						<div class="img business02"></div>
-						<div class="img business03"></div>
+						<div class="img business02 animated fadeInRight"></div>
+						<div class="img business03 animated fadeInRight"></div>
 						<br />
 					</div>
 				</div>
@@ -362,7 +393,7 @@
 
 			<footer>
 				<div class="has-3-columns dont-retract">
-					<div>
+					<div class="animated fadeIn" data-delay="500">
 						<h3>Registered address</h3>
 						<ul>
 							<li>1 Street name</li>
@@ -374,7 +405,7 @@
 						</ul>
 					</div>
 
-					<div>
+					<div class="animated fadeIn" data-delay="1000">
 						<h3>Site map</h3>
 						<ul>
 							<li><a href="#Home">Home</a></li>
@@ -385,7 +416,7 @@
 						</ul>
 					</div>
 
-					<div>
+					<div class="animated fadeIn" data-delay="1500">
 						<h3>Contact</h3>
 						<ul>
 							<li><a href="mailto:Mollitiam.cs@gmail.com">Mollitiam.cs@gmail.com</a></li>
@@ -395,7 +426,7 @@
 				</div>
 
 
-				<details>
+				<details class="animated fadeIn">
 					All photos come from <a href="https://unsplash.com">Unsplash</a>.  In order of appearance:
 					<ul>
 						<li>Tree01 by <a href="https://unsplash.com/@pedrosanz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pedro Sanz</a></li>
@@ -416,7 +447,7 @@
 					</summary>
 				</details>
 
-				<div class="copyright">
+				<div class="copyright animated fadeInUp">
 					<div class="img logo"></div>
 					<br />
 					<div class="right">
