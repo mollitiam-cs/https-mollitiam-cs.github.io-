@@ -29,7 +29,7 @@
 		PWA
 		/////////////////////////////// -->
 
-		<link rel="manifest" href="https://www.mollitiam-consultancy-services.co.uk/manifest.json" />
+		<link rel="manifest" href="https://www.mollitiam-cs.com/manifest.json" />
 		<meta name="theme-color" content="#000000" />
 		<link rel="apple-touch-icon" href="logo192.png" />
 		<script>
@@ -37,7 +37,7 @@
 			if ('serviceWorker' in navigator) {
 				// Use the window load event to keep the page load performant
 				window.addEventListener('load', () => {
-					//navigator.serviceWorker.register('/service-worker.js');
+					navigator.serviceWorker.register('/service-worker.js');
 				});
 			}
 		</script>
@@ -206,8 +206,7 @@
 
 			///////////////////////////////////////////////////////////////// -->
 
-			<a id="Home"></a>
-			<section class="home">
+			<section id="Home" class="home">
 				<div>
 					<div class="tag-line">Resilience by design</div>
 					<h1>Welcome to Mollitiam Consultancy Services</h1>
@@ -238,8 +237,7 @@
 
 			///////////////////////////////////////////////////////////////// -->
 
-			<a id="About"></a>
-			<section class="about">
+			<section id="About" class="about">
 				<h2 class="animated slideInLeft">About us</h2>
 				<div class="has-3-columns">
 					<div class="animated fadeInUp" data-delay="250">
@@ -272,8 +270,7 @@
 
 			///////////////////////////////////////////////////////////////// -->
 
-			<a id="Resilience"></a>
-			<section class="white resilience">
+			<section id="Resilience"  class="white resilience">
 				<div class="tag-line animated fadeIn" data-delay="2000">A real opportunity for simplification and standardisation</div>
 				<h1 class="animated fadeInLeft">Operational Resilience</h1>
 
@@ -325,8 +322,7 @@
 			///////////////////////////////////////////////////////////////// -->
 
 
-			<a id="Risk"></a>
-			<section class="blue risk">
+			<section id="Risk" class="blue risk">
 				<div class="tag-line animated fadeIn" data-delay="1000">creating a no blame culture</div>
 				<h1 class="animated fadeInLeft">Operational Risk</h1>
 				<div class="has-3-columns">
@@ -355,8 +351,7 @@
 
 			///////////////////////////////////////////////////////////////// -->
 
-			<a id="Assurance"></a>
-			<section class="assurance">
+			<section id="Assurance" class="assurance">
 				<div class="tag-line animated fadeIn" data-delay="1000">complementing your project management resource</div>
 				<h1 class="animated fadeInLeft">Project Support and Governance</h1>
 
